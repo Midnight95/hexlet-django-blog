@@ -1,5 +1,15 @@
-<h1>The project name is - {{ name }}</h1>
+{% extends 'base.html' %}
 
-{% if article_id and tags %}
-<p>Статья номер {{ article_id }}. Тег {{ tags }}</p>
-{% endif %}
+{% block content %}
+    <h1>The project name is - {{ name }}</h1>
+
+    {% if article_id and tags %}
+    <p>Статья номер {{ article_id }}. Тег {{ tags }}</p>
+    {% endif %}
+
+    <h1>Список статей</h1>
+    {% for article in articles %}
+        <h2>{{ article.name }}</h2>
+        <div>{{ article.body|slice:":200" }}</div>
+    {% endfor %}
+{% endblock %}
