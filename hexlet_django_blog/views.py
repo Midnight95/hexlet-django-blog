@@ -7,7 +7,7 @@ class IndexView(View):
 
     def get(self, request, *args, **kwargs):
         return redirect(
-            reverse('article', kwargs={'tags': 'python', 'article_id': 42})
+            reverse('about')
         )
 
 
